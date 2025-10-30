@@ -599,12 +599,14 @@ Kết quả mong đợi:
 **Giải pháp:**
 
 # Nếu chưa có, deploy lại
+```bash
 cd ~/ejbca-ce
 ant deploy-keystore
-
-# Restart WildFly
-pkill -9 -f wildfly
-/opt/wildfly/bin/standalone.sh -b 0.0.0.0 > /dev/null 2>&1 &
 ```
 
----
+# Restart WildFly
+```bash
+pkill -9 -f wildfly
+/opt/wildfly/bin/standalone.sh -b 0.0.0.0 > /dev/null 2>&1 &
+sleep 30
+```
